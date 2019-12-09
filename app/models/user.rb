@@ -4,4 +4,5 @@ class User < ApplicationRecord
   has_many :restaurants, through: :cards
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :photo, PhotoUploader
 end

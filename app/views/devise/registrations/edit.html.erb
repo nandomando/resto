@@ -17,6 +17,14 @@
           <%= f.input :password_confirmation,
           required: false,
           input_html: { autocomplete: "new-password" } %>
+          <%= f.input :first_name,
+                        required:false %>
+          <%= f.input :last_name,
+                        required:false %>
+          <%= f.input :phone_number,
+                        required:false %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :current_password,
           hint: "we need your current password to confirm your changes",
           required: true,
