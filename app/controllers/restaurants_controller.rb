@@ -8,18 +8,19 @@ class RestaurantsController < ApplicationController
   end
 
   def like
-    if current_user.favorited?(@specialty)
-      current_user.unfavorite(@specialty)
+    @restaurant = Restaurant.find(params[:id])
+    if current_user.favorited?(@restaurant)
+      current_user.unfavorite(@restaurant)
       result = {liked: false}
     else
-      current_user.favorite(@specialty)
+      current_user.favorite(@restaurant)
       result = {liked: true}
     end
     render json: result
   end
 
   def favorites
-    @favorites = current_user.all_favorited
+    @favorites_rest = current_user.favorited_by_type('restaurant')
   end
 
   def new

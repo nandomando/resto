@@ -2,16 +2,14 @@ const initFavorite = () => {
   $('.favorites').click((e) => {
 
 
-const initFavorite = () => {
-  $(‘.favorites’).click((e) => {
  Rails.ajax({
-      type: “GET”,
-      url: “/restaurants/” + $(e.target).data(“id”) + “/like”,
+      type: "GET",
+      url: "/restaurants/" + $(e.target).data("id") + "/like",
       success: (data) => {
         if (data.liked) {
-          $(e.target).addClass(“liked”)
+          $(e.target).addClass("liked")
         } else {
-          $(e.target).removeClass(“liked”)
+          $(e.target).removeClass("liked")
         }
       },
       error: (data) => {}
@@ -19,3 +17,21 @@ const initFavorite = () => {
   })
 }
 export { initFavorite };
+const initLike = () => {
+  $('.favorites2').click((e) => {
+    console.log("coucou")
+    Rails.ajax({
+      type: "GET",
+      url: "/dashboard/" + $(e.target).data("id") + "/like",
+      success: (data) => {
+        if (data.liked) {
+          $(e.target).addClass("liked")
+        } else {
+          $(e.target).removeClass("liked")
+        }
+      },
+      error: (data) => {}
+    })
+  })
+}
+export { initLike };

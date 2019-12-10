@@ -17,7 +17,7 @@
           <div>
             <div class="d-flex justify-content-between">
               <h2><%= restaurant.name %></h2>
-              <i class="far fa-heart favorites" data-id="<%= restaurant.id %>"></i>
+              <i class="far fa-heart favorites <%= current_user.favorited?(restaurant) ? "liked" : "" %>" data-id="<%= restaurant.id %>"></i>
             </div>
 
             <p><%= restaurant.description %></p>
