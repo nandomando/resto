@@ -7,6 +7,21 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def like
+    if current_user.favorited?(@specialty)
+      current_user.unfavorite(@specialty)
+      result = {liked: false}
+    else
+      current_user.favorite(@specialty)
+      result = {liked: true}
+    end
+    render json: result
+  end
+
+  def favorites
+    @favorites = current_user.all_favorited
+  end
+
   def new
     @restaurant = Restaurant.new
   end
