@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    if params[:query].present?
+      @restaurants = Restaurant.global_search("%#{params[:query]}%")
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
   def new
