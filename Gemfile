@@ -18,6 +18,8 @@ gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search', '~> 2.3.0'
+gem 'acts_as_favoritor'
+gem 'jquery-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

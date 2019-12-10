@@ -15,7 +15,11 @@
         <%= cl_image_tag restaurant.photo %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= restaurant.name %></h2>
+            <div class="d-flex justify-content-between">
+              <h2><%= restaurant.name %></h2>
+              <i class="far fa-heart favorites" data-id="<%= restaurant.id %>"></i>
+            </div>
+
             <p><%= restaurant.description %></p>
             <p> <%= restaurant.address %> </p>
           </div>
