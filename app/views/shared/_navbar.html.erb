@@ -1,34 +1,29 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="position: sticky; bottom: 0;">
+  <div class="container">
+    <ul class="d-flex d-flex justify-content-around" style="list-style: none; width: 100%; padding: 0;">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", restaurants_path, class: "nav-link" %>
+          <%= link_to restaurants_path, class: "nav-link" do %>
+            <i class="fas fa-home"></i>
+          <%end%>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+        <li class="nav-item active">
+          <%= link_to "#", class: "nav-link" do %>
+            <i class="fas fa-qrcode"></i>
+          <%end%>
         </li>
-        <li class="nav-item dropdown">
-          <% if user_signed_in? && current_user.photo.file %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-          <%= image_tag 'non_existing_id.png' , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Edit profil", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+        <li class="nav-item active">
+        <%= link_to dashboard_path, class: "nav-link mes-parties"  do %>
+          <i class="fas fa-credit-card"></i>
+        <% end %>
+      </li>
+
+      <li class="nav-item active">
+        <%= link_to profile_path, class: "nav-link ta-partie" do %>
+          <i class="fas fa-user"></i>
+        <% end %>
+      </li>
+
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>

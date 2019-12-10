@@ -1,4 +1,20 @@
 <h1>Index restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.name %></p>
-<%end%>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+    <div class="col-md-4 col-lg-3 my-3">
+      <div class="card-trip">
+        <%= cl_image_tag restaurant.photo %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <p><%= restaurant.description %></p>
+            <p> <%= restaurant.address %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>
+
