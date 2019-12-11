@@ -5,11 +5,11 @@ import { initLike } from '../plugins/favorite';
 if (document.querySelector('.favorites')) {
   initFavorite();
 }
-if (document.querySelector('.favorites2')) {
+// if (document.querySelector('.favorites2')) {
 
-initLike();
+// initLike();
 
-}
+// }
 
 document.querySelectorAll('.card-category').forEach((card) => {
 

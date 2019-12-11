@@ -19,8 +19,8 @@ class RestaurantsController < ApplicationController
     render json: result
   end
 
-  def favorites
-    @favorites_rest = current_user.favorited_by_type('restaurant')
+  def dashboard
+    @favorites = current_user.all_favorited
   end
 
   def new
