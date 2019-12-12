@@ -1,1 +1,29 @@
 <h1>test</h1>
+
+<form onsubmit="generate();return false;">
+  <input type="text" id="qr" name="">
+</form>
+
+<div id="qrResult" style="height: 300px, width: 300px;">
+
+</div>
+
+<script type="text/javascript">
+  const qrcode = new code(document.getElementById('qr'), {
+    width:300,
+    height: 300
+  });
+
+function generate(){
+  const message = document.getElementById('qr');
+  if(!message.value){
+    alert("input a text");
+    message.focus();
+    return;
+  }
+
+
+  qrcode.makeCode(message.value);
+
+  }
+</script>
