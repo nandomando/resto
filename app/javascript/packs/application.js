@@ -1,7 +1,15 @@
 import "bootstrap";
 import { initFavorite } from '../plugins/favorite';
+// import { qrcode } from '../plugins/favorite';
 //import { initLike } from '../plugins/favorite';
 
+var QRCode = require('qrcode')
+var canvas = document.getElementById('canvas')
+
+QRCode.toCanvas(canvas, 'fernando', function (error) {
+  if (error) console.error(error)
+  console.log('success!');
+})
 if (document.querySelector('.favorites')) {
   initFavorite();
 }
