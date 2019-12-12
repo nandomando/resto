@@ -6,20 +6,22 @@ import { initFavorite } from '../plugins/favorite';
 if (document.querySelector('#qrResult')) {
   QRCode();
 
-var QRCode = require('qrcode')
-var canvas = document.getElementById('canvas')
+function QRCode () {
+  var QRCode = require('qrcode')
+  var canvas = document.getElementById('canvas')
 
-QRCode.toCanvas(canvas, 'fernando', function (error) {
-  if (error) console.error(error)
-  console.log('success!');
-})
-
+  QRCode.toCanvas(canvas, "hola", function (error) {
+    if (error) console.error(error)
+    console.log('success!');
+  })
 }
-// favorites
+}
+// here starts the code for favorites
 
 if (document.querySelector('.favorites')) {
   initFavorite();
 }
+// thats if i want to put another favorite function
 // if (document.querySelector('.favorites2')) {
 
 // initLike();
