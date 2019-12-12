@@ -11,7 +11,7 @@ if (document.querySelector('.favorites')) {
 
 // }
 
-document.querySelectorAll('.card-category').forEach((card) => {
+document.querySelectorAll('.card-trip-dash').forEach((card) => {
 
   const liked = card.querySelector('.liked')
   liked.addEventListener('click', () => {
