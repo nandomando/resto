@@ -6,15 +6,15 @@ import { initFavorite } from '../plugins/favorite';
 if (document.querySelector('#qrResult')) {
   QRCode();
 
-function QRCode () {
-  var QRCode = require('qrcode')
-  var canvas = document.getElementById('canvas')
+  function QRCode () {
+    var QRCode = require('qrcode')
+    var canvas = document.getElementById('canvas')
 
-  QRCode.toCanvas(canvas, "hola", function (error) {
-    if (error) console.error(error)
-    console.log('success!');
-  })
-}
+    QRCode.toCanvas(canvas, "www.google.com", function (error) {
+      if (error) console.error(error)
+      console.log('success!');
+    })
+  }
 }
 // here starts the code for favorites
 
