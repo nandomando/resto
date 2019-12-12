@@ -1,12 +1,22 @@
-<h1>dashboard</h1>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <% @favorites.each do |favorite|%>
-      <%= favorite.name %>
-        <i class="far fa-heart favorites <%= current_user.favorited?(favorite) ? "liked" : "" %>" data-id="<%= favorite.id %>"></i>
+<div class="container">
+  <div class="row">
+    <% @favorites.each do |favorite| %>
+    <div class="col-md-4 col-lg-3 my-3">
+      <div class="card-trip">
+        <%= cl_image_tag favorite.photo %>
+        <div class="card-trip-infos">
+          <div>
+            <div class="d-flex justify-content-between">
+              <h2><%= favorite.name %></h2>
+              <i class="far fa-heart favorites <%= current_user.favorited?(favorite) ? "liked" : "" %>" data-id="<%= favorite.id %>"></i>
+            </div>
 
-    <% end %>
+            <p><%= favorite.description %></p>
+            <p> <%= favorite.address %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%end%>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-
 </div>
