@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   end
   get 'dashboard',  to: 'restaurants#dashboard'
   get 'profile', to: 'pages#profile'
-
+  get 'qrcode', to: 'pages#qrcode'
 end
